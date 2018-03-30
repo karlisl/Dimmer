@@ -257,7 +257,7 @@ extension UIView {
 // MARK: - Loading
 extension UIView {
     
-    open var isLoading: Bool {
+    open var dimmerIsLoading: Bool {
         if let _ = get(kDimmerActivityIndicatorView), dimmingRatio > 0 {
             return true
         } else {
@@ -265,7 +265,7 @@ extension UIView {
         }
     }
     
-    open func showLoading(animated: Bool = true, customView: UIView? = nil, color: UIColor = .black, alpha: CGFloat = 0.4, style: UIActivityIndicatorViewStyle = .gray) {
+    open func showDimmerLoading(animated: Bool = true, customView: UIView? = nil, color: UIColor = .black, alpha: CGFloat = 0.4, style: UIActivityIndicatorViewStyle = .gray) {
         dim(animated: animated, direction: .solid, color: color, alpha: alpha)
         if let _ = self.dimmerActivityView {
             // already loading
@@ -290,7 +290,7 @@ extension UIView {
         }
     }
     
-    open func hideLoading(animated: Bool = true) {
+    open func hideDimmerLoading(animated: Bool = true) {
         undim(animated: animated)
     }
 }

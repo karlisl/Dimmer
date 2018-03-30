@@ -10,24 +10,24 @@ import UIViewKVO
 
 extension UIViewController {
     
-    open func hideLoading() {
+    open func hideDimmerLoading() {
         if let navigationController = self.navigationController {
-            navigationController.view.hideLoading()
+            navigationController.view.hideDimmerLoading()
             navigationController.interactivePopGestureRecognizer?.isEnabled = true
         } else {
-            view.hideLoading()
+            view.hideDimmerLoading()
         }
         navigationController?.navigationBar.isUserInteractionEnabled = true
     }
     
-    public func showLoading(alpha: CGFloat = 0.4) {
-        hideLoading()
+    public func showDimmerLoading(alpha: CGFloat = 0.4) {
+        hideDimmerLoading()
         navigationController?.navigationBar.isUserInteractionEnabled = false
         if let navigationController = self.navigationController {
             navigationController.interactivePopGestureRecognizer?.isEnabled = false
-            navigationController.view.showLoading(alpha: alpha)
+            navigationController.view.showDimmerLoading(alpha: alpha)
         } else {
-            view.showLoading(alpha: alpha)
+            view.showDimmerLoading(alpha: alpha)
         }
     }
 }
